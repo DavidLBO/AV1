@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-export default function inputField({ label, value, onChangeText}){
+export default function InputField({ label, value, onChangeText}){
     return(
         <View style={styles.inputRow}>
         <Text style={styles.label}>{label}</Text>
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
       },
       inputText: {
-        flex: 1,
+        flex: 2,
         borderColor: 'black',
         borderWidth: 1,
         padding: 8,

@@ -2,18 +2,21 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 
-export default function contactList({lista}) {
+export default function ContactList({lista}) {
   return (
     <ScrollView style={styles.listaContainers}>
+
       <View style={styles.listaHeader}>
         <Text style={[styles.listaColuna, styles.listaTitulo]}>Nome</Text>
         <Text style={[styles.listaColuna, styles.listaTitulo]}>Telefone</Text>
       </View>
+
       {lista.map((item, index) => (
         <View key={index} style={styles.listaLinha}>
           <Text style={styles.listaColuna}>{item.nome}</Text>
-          <Text style={styles.listaColuna}>{item.Telefone}</Text>
+          <Text style={styles.listaColuna}>{item.telefone}</Text>
         </View>
+
       ))}
     </ScrollView>
   );
@@ -21,8 +24,9 @@ export default function contactList({lista}) {
 
 const styles = StyleSheet.create({
   listaContainers: {
-    flex: 1,
+    flex: 3,
     marginTop: 10,
+    marginBottom: 10,
     borderTopWidth: 2,
     borderColor: 'black',
     paddingTop: 15,
@@ -36,7 +40,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   listaColuna: {
-    flex: 1,
+    flex: 2,
     fontSize: 16,
   },
   listaTitulo: {

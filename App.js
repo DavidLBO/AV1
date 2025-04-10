@@ -3,9 +3,9 @@ import { StatusBar } from 'expo-status-bar';
 
 import { useState } from 'react'; 
 
-import inputField from './components/inputField';
-import buttonComponent from './components/buttonComponent';
-import contactList from './components/contactList';
+import InputField from './components/InputField';
+import ButtonComponent from './components/ButtonComponent';
+import ContactList from './components/ContactList';
 
 export default function App() {
   const [nome, setNome] = useState('');
@@ -25,12 +25,12 @@ export default function App() {
     <View style={styles.maiContainer}>
         <Text style = {styles.title}>Cadastro de Usuário</Text>
 
-        <inputField label="Nome:" value={nome} onChangeText={setNome} />
-        <inputField label="Telefone:" value={telefone} onChangeText={setTelefone} />
+        <InputField label="Nome:" value={nome} onChangeText={setNome} />
+        <InputField label="Telefone:" value={telefone} onChangeText={setTelefone} />
 
-        <buttonComponent title={'Cadastrar'} onPress={cadastrarDados}/>
+        <ButtonComponent title={'Cadastrar'} onPress={cadastrarDados}/>
 
-        <contactList lista={lista}/>
+        <ContactList lista={lista}/>
 
         <StatusBar style="auto" />
     </View>

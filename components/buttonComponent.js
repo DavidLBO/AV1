@@ -1,24 +1,39 @@
 import React from "react";
-import { View, Button, StyleSheet, Text } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function buttonComponent({onPress, title}){
-    return(
-        <View style = {styles.inputRow}>
-            <Text style = {styles.label}></Text>
-            <View style = {{flex: 1}} >
-                <Button title={title} onPress={onPress} />
-            </View>
+export default function ButtonComponent({ onPress, title }) {
+    return (
+        <View style={styles.inputArea}>
+            <TouchableOpacity 
+                style={styles.customButton}
+                onPress={onPress}
+            >
+                <Text style={styles.buttonText}>{title}</Text>
+            </TouchableOpacity>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    inputRow: {
+    inputArea: {
+        marginTop: '3%',
         flexDirection: 'row',
+        alignSelf: 'flex-end',
+        width: '75%',
+        marginBottom: '3%',
+    },
+    customButton: {
+        flex: 1,
+        backgroundColor: '#DDE8FA',
+        borderColor: '#A6B9D9',
+        borderWidth: 2,
+        borderRadius: 2,
+        paddingVertical: 2,
         alignItems: 'center',
-        marginBottom: 15,
-      },
-      label: {
-        width: '25%',
-      },
-})
+        justifyContent: 'center',
+    },
+    buttonText: {
+        color: 'black',
+        fontSize: 24,
+    }
+});
