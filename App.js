@@ -26,7 +26,7 @@ export default function App() {
         <Text style = {styles.Title}>Cadastro de Usuário</Text>
 
         <inputField label="Nome:" value={nome} onChangeText={setNome} />
-        <inputField label="Telefone" value={Telefone} onChangeText={setTelefone} />
+        <inputField label="Telefone:" value={Telefone} onChangeText={setTelefone} />
 
         <buttonComponent title={'Cadastrar'} onPress={cadastrarDados}/>
 
