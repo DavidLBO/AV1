@@ -3,6 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import { useState } from 'react'; 
 
+
+import {rotulo_input_bnt, rotulo_input_titulo } from './components/mensagens';
 import InputField from './components/InputField';
 import ButtonComponent from './components/ButtonComponent';
 import ContactList from './components/ContactList';
@@ -23,12 +25,12 @@ export default function App() {
     <SafeAreaView style = {{flex: 1}}>
 
     <View style={styles.maiContainer}>
-        <Text style = {styles.title}>Cadastro de Usuário</Text>
+        <Text style = {styles.title}>{rotulo_input_titulo}</Text>
 
         <InputField label="Nome:" value={nome} onChangeText={setNome} />
         <InputField label="Telefone:" value={telefone} onChangeText={setTelefone} />
 
-        <ButtonComponent title={'Cadastrar'} onPress={cadastrarDados}/>
+        <ButtonComponent title={rotulo_input_bnt} onPress={cadastrarDados}/>
 
         <ContactList lista={lista}/>
 
